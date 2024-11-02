@@ -161,3 +161,25 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Update CSRF settings
+CSRF_TRUSTED_ORIGINS = [
+    'https://portfolio-django-production-e6b9.up.railway.app',
+    'https://*.railway.app',
+]
+
+# Make sure these are also set
+ALLOWED_HOSTS = [
+    'portfolio-django-production-e6b9.up.railway.app',
+    '.railway.app',
+    'localhost',
+    '127.0.0.1',
+]
+
+# And your CORS settings should include
+CORS_ALLOWED_ORIGINS = [
+    'https://bhargav-ayare-portfolio.vercel.app',
+    'http://localhost:3000',
+]
+
+CORS_ALLOW_CREDENTIALS = True
