@@ -6,19 +6,21 @@ import Portfolio from "@/components/Portfolio";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Experience from "@/components/Experience";
 
 
 
 export default function Home() {
   return (
     <>
-    <Navbar/>
-    <Hero/>
-    <About/>
-    <Portfolio/>
-    <Skills/>
-    <Contact/>
-    <Footer/>
+      <Navbar />
+      <Hero />
+      <About />
+      <Portfolio />
+      <Experience />
+      <Skills />
+      <Contact />
+      <Footer />
     </>
   );
 }

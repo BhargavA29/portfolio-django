@@ -4,6 +4,10 @@ import NextJsIcon from "../assets/nextjs.webp"
 import ExpressIcon from "../assets/expressjs.png"
 import Tailwind from "../assets/tailwind.png"
 import Image from 'next/image';
+import PythonIcon from "../assets/python.png"
+import ConvexIcon from "../assets/convex.png"
+import CloudinaryIcon from "../assets/cloudinary.png"
+import ClerkIcon from "../assets/clerk.png"
 
 const skillIcons = [
   { icon: <FaHtml5 size={140} />, label: "HTML" },
@@ -11,19 +15,34 @@ const skillIcons = [
   { icon: <FaReact size={140} />, label: "React" },
   { icon: <FaJsSquare size={140} />, label: "JavaScript" },
   { icon: <FaDatabase size={140} />, label: "MongoDB" },
-  { 
+  {
     icon: <Image src={NextJsIcon} alt="Next.js" width={140} height={140} />,
-    label: "NextJs" 
+    label: "NextJs"
   },
-  { 
-    icon: <Image src={ExpressIcon} alt="Next.js" width={140} height={140} />, 
-    label: "ExpressJs" 
+  {
+    icon: <Image src={ExpressIcon} alt="Next.js" width={140} height={140} />,
+    label: "ExpressJs"
   },
-  { 
-    icon: <Image src={Tailwind} alt="Next.js" width={140} height={140} />, 
-    label: "Tailwind CSS" 
+  {
+    icon: <Image src={Tailwind} alt="Next.js" width={140} height={140} />,
+    label: "Tailwind CSS"
+  },
+  {
+    icon: <Image src={PythonIcon} alt="Python" width={140} height={140} />,
+    label: "Python"
+  },
+  {
+    icon: <Image src={ConvexIcon} alt="Convex" width={140} height={140} />,
+    label: "Convex"
+  },
+  {
+    icon: <Image src={CloudinaryIcon} alt="Cloudinary" width={140} height={140} />,
+    label: "Cloudinary"
+  },
+  {
+    icon: <Image src={ClerkIcon} alt="Clerk" width={140} height={140} />,
+    label: "Clerk"
   }
-
 ];
 
 const Skills = () => {
