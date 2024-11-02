@@ -10,6 +10,10 @@
     "clean": "rimraf .next",
     "build:clean": "rimraf .next && next build"
   },
+  "devDependencies": {
+    "rimraf": "^5.0.1",
+    "next": "14.0.0"
+  },
   "dependencies": {
     "framer-motion": "^11.3.30",
     "next": "14.0.0",
