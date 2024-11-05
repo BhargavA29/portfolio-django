@@ -20,7 +20,7 @@ const Experience = () => {
     useEffect(() => {
         const fetchExperiences = async () => {
             try {
-                const response = await fetch('http://localhost:8000/api/experiences/');
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/experiences/`);
                 const data = await response.json();
                 setExperiences(data);
             } catch (error) {

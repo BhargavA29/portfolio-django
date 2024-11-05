@@ -70,11 +70,14 @@ MIDDLEWARE = [
 ]
 
 # CORS settings
-CORS_ALLOW_ALL_ORIGINS = True  # Only for development
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    # Add your frontend URL when deployed
-]
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
+else:
+    CORS_ALLOW_ALL_ORIGINS = False
+    CORS_ALLOWED_ORIGINS = [
+        "https://bhargav-ayare-portfolio.vercel.app/",  # Your deployed frontend URL
+        "http://localhost:3000",
+    ]
 
 ROOT_URLCONF = 'core.urls'
 
