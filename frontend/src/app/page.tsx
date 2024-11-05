@@ -7,12 +7,14 @@ import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Experience from "@/components/Experience";
+import DraggableIcons from "@/components/DraggableIcons";
 
 
 
 export default function Home() {
   return (
-    <>
+    <main>
+      <DraggableIcons />
       <Navbar />
       <Hero />
       <About />
@@ -21,6 +23,6 @@ export default function Home() {
       <Skills />
       <Contact />
       <Footer />
-    </>
+    </main>
   );
 }
