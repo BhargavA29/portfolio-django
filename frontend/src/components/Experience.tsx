@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion"
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-
 interface Experience {
     id: number;
     company: string;
@@ -22,7 +20,7 @@ const Experience = () => {
     useEffect(() => {
         const fetchExperiences = async () => {
             try {
-                const response = await fetch(`${API_URL}/api/experiences/`);
+                const response = await fetch('http://localhost:8000/api/experiences/');
                 const data = await response.json();
                 setExperiences(data);
             } catch (error) {

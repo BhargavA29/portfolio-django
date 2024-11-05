@@ -16,7 +16,6 @@ from dotenv import load_dotenv
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-import dj_database_url
 
 # Load environment variables
 load_dotenv()
@@ -34,7 +33,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -70,7 +69,10 @@ MIDDLEWARE = [
 
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True  # Only for development
-CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    # Add your frontend URL when deployed
+]
 
 ROOT_URLCONF = 'core.urls'
 
@@ -97,12 +99,10 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'sqlite:///db.sqlite3'),
-        engine='django.db.backends.postgresql',
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',  # We'll change this to PostgreSQL later
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 # Cloudinary settings
@@ -163,25 +163,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Update CSRF settings
-CSRF_TRUSTED_ORIGINS = [
-    'https://portfolio-django-production-e6b9.up.railway.app',
-    'https://*.railway.app',
-]
-
-# Make sure these are also set
-ALLOWED_HOSTS = [
-    'portfolio-django-production-e6b9.up.railway.app',
-    '.railway.app',
-    'localhost',
-    '127.0.0.1',
-]
-
-# And your CORS settings should include
-CORS_ALLOWED_ORIGINS = [
-    'https://bhargav-ayare-portfolio.vercel.app',
-    'http://localhost:3000',
-]
-
-CORS_ALLOW_CREDENTIALS = True
