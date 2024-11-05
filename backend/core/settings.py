@@ -75,8 +75,8 @@ if DEBUG:
 else:
     CORS_ALLOW_ALL_ORIGINS = False
     CORS_ALLOWED_ORIGINS = [
-        "https://bhargav-ayare-portfolio.vercel.app/",  # Your deployed frontend URL
-        "http://localhost:3000",
+        "https://bhargav-ayare-portfolio.vercel.app",  # Remove the trailing slash
+        "http://localhost:3000"
     ]
 
 ROOT_URLCONF = 'core.urls'
